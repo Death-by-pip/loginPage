@@ -1,0 +1,190 @@
+<QuizManager>
+    Question1:
+        name: "one"
+    Question2:
+        name: "two"
+    Correct:
+        name: "yes"
+    Incorrect:
+        name: "no"
+
+<Question1>
+    BoxLayout:
+        padding: "20dp"
+        orientation: "vertical"
+        spacing: 10
+        RelativeLayout:
+            Label:
+                text: "Question"
+                font_size: 30
+            Label:
+                text: 'What language is "こんにちは"?'
+                font_size: 30
+            Label:
+                text: "Are you enjoying this?"
+                font_size: 30
+            Label:
+                text: "What is the derivative of (x²+2ˣ)?"
+                font_size: 30
+            Label:
+                text: "Question"
+                font_size: 30
+        RelativeLayout:
+            pos_hint: {"center_x":.5, "center_y":.5}
+            size_hint: .9,.7
+            GridLayout:
+                rows: 2
+                spacing: 15
+                Button:
+                    text: "Option 1"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    on_release: root.answer_question(False)
+                Button:
+                    text: "Option 2"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    on_release: root.answer_question(False)
+                Button:
+                    text: "Option 3"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    on_release: root.answer_question(False)
+                Button:
+                    text: "Option 4"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    on_release: root.answer_question(True)
+                Button:
+                    text: "Option 5"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    on_release: root.answer_question(False)
+                Button:
+                    text: "what the hell?\n\n\n\n"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    on_release: root.answer_question(False)
+            GridLayout:
+                rows: 2
+                spacing: 15
+                Label:
+                    text: "Chinese"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Japanese"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Korean"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "It doesn't show"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Greek"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "\ni cant read this.\n\n\n"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+            GridLayout:
+                rows: 2
+                spacing: 15
+                Label:
+                    text: "Very"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Somewhat"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Eh"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Not really"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Not at all"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "\n\nat least this\n\n"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+            GridLayout:
+                rows: 2
+                spacing: 15
+                Label:
+                    text: "Very"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Somewhat"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Eh"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: ""
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Not at all"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "\n\n\nanswers readable.\n"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+
+            GridLayout:
+                rows: 2
+                spacing: 15
+                Label:
+                    text: "Very"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Somewhat"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Eh"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Not really"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "Not at all"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                Label:
+                    text: "\n\n\n\nanswers readable."
+                    pos_hint: {"center_x":.5, "center_y":.5}
+
+<Question2>
+    BoxLayout:
+        padding: "20dp"
+        orientation: "vertical"
+        spacing: 10
+        Label:
+            text: "Question"
+            pos_hint: {"center_x":.5, "center_y":.5}
+            font_size: 30
+        TextInput:
+            text: "type answer here..."
+            pos_hint: {"center_x":.5, "center_y":.5}
+        Button:
+            text: "Submit"
+            pos_hint: {"center_x":.5, "center_y":.5}
+
+<Correct>
+    BoxLayout:
+        padding: "20dp"
+        orientation: "vertical"
+        spacing: 10
+        pos_hint: {"center_x":.5, "center_y":.5}
+        Label:
+            text: "Correct"
+            pos_hint: {"center_x":.5, "center_y":.5}
+            font_size: 30
+        Button:
+            text: "Proceed"
+            pos_hint: {"center_x":.5, "center_y":.5}
+
+<Incorrect>
+    BoxLayout:
+        padding: "20dp"
+        orientation: "vertical"
+        pos_hint: {"center_x":.5, "center_y":.5}
+        spacing: 10
+        Label:
+            text: "Incorrect"
+            pos_hint: {"center_x":.5, "center_y":.5}
+            font_size: 30
+        Button:
+            text: "Proceed"
+            pos_hint: {"center_x":.5, "center_y":.5}
