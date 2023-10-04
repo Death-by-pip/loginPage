@@ -6,9 +6,7 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.relativelayout import RelativeLayout
-from kivy.core.text import LabelBase, DEFAULT_FONT
 
-LabelBase.register(DEFAULT_FONT, "C:\\Windows\\Fonts\\Cour.ttf")
 Builder.load_file("QuizPage.kv")
 
 
@@ -17,12 +15,16 @@ class QuizPageApp(App):
         return QuizManager()
 
 
-class LoginManager(ScreenManager):
+class QuizManager(ScreenManager):
     pass
 
 
 class Question1(Screen):
-    pass
+    def answered(self,correctness):
+        if correctness:
+            self.manager.current = "yes"
+        else:
+            self.manager.current = "no"
 
 
 class Question2(Screen):
@@ -30,11 +32,13 @@ class Question2(Screen):
 
 
 class Correct(Screen):
-    pass
+    def proceed(self):
+        self.manager.current = "two"
 
 
 class Incorrect(Screen):
-    pass
+    def proceed(self):
+        self.manager.current = "two"
 
 
 QuizPageApp().run()
