@@ -3,6 +3,10 @@
     font_name: 'Cour.ttf'
 
 <QuizManager>
+    Login:
+        name: "login"
+    Register:
+        name: "new"
     Question1:
         name: "one"
     Question2:
@@ -11,6 +15,58 @@
         name: "yes"
     Incorrect:
         name: "no"
+
+<Login>
+    BoxLayout:
+        pos_hint: {"center_x":.5, "center_y":.5}
+        size_hint: .7, .8
+        orientation: "vertical"
+        Label:
+            id: invalid_txt
+            color: 1,0,0,1
+            text: ""
+        TextInput:
+            id: username
+            hint_text: "Username"
+        TextInput:
+            id: password
+            hint_text: "Password"
+            password: True
+        Button:
+            text: "New Account"
+            on_press: root.register()
+        Button:
+            text: "Log in"
+            on_press: root.verify()
+
+<Register>
+    BoxLayout:
+        pos_hint: {"center_x":.5, "center_y":.5}
+        size_hint: .7, .8
+        orientation: "vertical"
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text: "<- Back"
+                on_press: root.back()
+            Label:
+                id: invalid_txt
+                color: 1,0,0,1
+                text: ""
+        TextInput:
+            id: username
+            hint_text: "Username"
+        TextInput:
+            id: pass1
+            hint_text: "Password"
+            password: True
+        TextInput:
+            id: pass2
+            hint_text: "Reenter Password"
+            password: True
+        Button:
+            text: "Verify & Create"
+            on_press: root.verify()
 
 <Question1>
     BoxLayout:
@@ -31,7 +87,7 @@
                 text: "What is the derivative of (x²+2ˣ)?"
                 font_size: 30
             Label:
-                text: "Question"
+                text: "What is your favourite subject"
                 font_size: 30
         RelativeLayout:
             pos_hint: {"center_x":.5, "center_y":.5}
@@ -122,7 +178,6 @@
                         font_size: "10sp"
                         text: "x³      2ˣ-1\n3       ln 2"
                         pos_hint: {"center_x":.5, "center_y":.5}
-
                 Label:
                     text: "2x+ln(2)2ˣ"
                     pos_hint: {"center_x":.5, "center_y":.5}
@@ -137,19 +192,19 @@
                 rows: 2
                 spacing: 15
                 Label:
-                    text: "Very"
+                    text: "Math"
                     pos_hint: {"center_x":.5, "center_y":.5}
                 Label:
-                    text: "Somewhat"
+                    text: "Science"
                     pos_hint: {"center_x":.5, "center_y":.5}
                 Label:
-                    text: "Eh"
+                    text: "English"
                     pos_hint: {"center_x":.5, "center_y":.5}
                 Label:
-                    text: "Not really"
+                    text: "This is stupid"
                     pos_hint: {"center_x":.5, "center_y":.5}
                 Label:
-                    text: "Not at all"
+                    text: "History"
                     pos_hint: {"center_x":.5, "center_y":.5}
                 Label:
                     text: "\n\n\n\n(one option is correct)"
@@ -164,17 +219,13 @@
             text: "Question"
             pos_hint: {"center_x":.5, "center_y":.5}
             font_size: 40
-        RelativeLayout:
-            TextInput:
-                pos_hint: {"center_x":.5, "center_y":.5}
-            Label:
-                text: "Type Answer Here..."
-                color: 1,0,0,1
-                pos_hint: {"x":0, "top":0}
+        TextInput:
+            id: txtinpt
+            hint_text: "Type Answer Here..."
+            pos_hint: {"center_x":.5, "center_y":.5}
         Button:
             text: "Submit"
             pos_hint: {"center_x":.5, "center_y":.5}
-
 <Correct>
     BoxLayout:
         padding: "20dp"
